@@ -20,7 +20,7 @@ class ClassLoader
 
     public function registerDir($dir)
     {
-        %this->dirs[] = $dir;
+        $this->dirs[] = $dir;
     }
 
     public function loadClass($class)
