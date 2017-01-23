@@ -39,7 +39,7 @@ class Session
 
     public function clear()
     {
-        $_SESSION = array()
+        $_SESSION = array();
     }
 
 
