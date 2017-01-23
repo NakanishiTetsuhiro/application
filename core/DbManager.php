@@ -39,7 +39,7 @@ class DbManager
     }
 
 
-    public function repository_connection_map($repository_name, $name)
+    public function setRepositoryConnectionMap($repository_name, $name)
     {
         $this->repository_connection_map[$repository_name] = $name;
     }
