@@ -11,6 +11,8 @@ class DbManager
 
     public function connect($name, $params)
     {
+        // array_merge : 前の配列の後ろに配列を追加することにより、 ひとつまたは複数の配列の要素をマージし、得られた配列を返します。
+        //               入力配列が同じキー文字列を有していた場合、そのキーに関する後に指定された値が、 前の値を上書きします。
         $params = array_merge(array(
             'dsn'      => null,
             'user'     => '',
