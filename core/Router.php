@@ -23,7 +23,7 @@ class Router
                     $name = substr($token, 1);
                     $token = '(?P<' . $name . '>[^/]+)';
                 }
-                $tokens[$i];
+                $tokens[$i] = $token;
             }
 
             $pattern = '/' . implode('/', $tokens);
