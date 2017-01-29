@@ -19,7 +19,7 @@ abstract class Application
 
     protected function setDebugMode($debug)
     {
-        if($debug) {
+        if ($debug) {
             $this->debug = true;
             ini_set('display_errors', 1);
             error_reporting(-1);
@@ -51,11 +51,15 @@ abstract class Application
     abstract protected function registerRoutes();
 
 
-    public function idDebugMode()
+    public function isDebugMode()
     {
         return $this->debug;
     }
 
+    public function getRequest()
+    {
+        return $this->request;
+    }
 
     public function getResponse()
     {
