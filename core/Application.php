@@ -154,7 +154,16 @@ EOF
     }
 
 
-    public function runAcrion($controller_name, $action, $params = array())
+    /**
+     * 指定されたアクションを実行する
+     *
+     * @param string $controller_name
+     * @param string $action
+     * @param array $params
+     *
+     * @throws HttpNotFoundException コントローラが特定できない場合
+     */
+    public function runAction($controller_name, $action, $params = array())
     {
         $controller_class = ucfirst($controller_name) . 'Controller';
 

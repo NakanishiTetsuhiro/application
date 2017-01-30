@@ -41,7 +41,7 @@ class View
             ));
         }
 
-        return content;
+        return $content;
     }
 
 

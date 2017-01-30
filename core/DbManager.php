@@ -53,7 +53,7 @@ class DbManager
     {
         if (isset($this->repository_connection_map[$repository_name])) {
             $name = $this->repository_connection_map[$repository_name];
-            $con  = $this->getConnection($name);
+            $con = $this->getConnection($name);
         } else {
             $con = $this->getConnection();
         }
@@ -65,10 +65,10 @@ class DbManager
     # 実際にインスタンスの生成を担うメソッド
     public function get($repository_name)
     {
-        if (isset($this->repositories[$repository_name])) {
+        if (! isset($this->repositories[$repository_name])) {
             $repository_class = $repository_name . 'Repository';
             $con = $this->getConnectionForRepository($repository_name);
-            
+
             $repository = new $repository_class($con);
 
             $this->repositories[$repository_name] = $repository;

@@ -58,6 +58,14 @@ abstract class Controller
     }
 
 
+    /**
+     * ビューファイルのレンダリング
+     *
+     * @param array $variables テンプレートに渡す変数の連想配列
+     * @param string $template ビューファイル名(nullの場合はアクション名を使う)
+     * @param string $layout レイアウトファイル名
+     * @return string レンダリングしたビューファイルの内容
+     */
     protected function render($variables = array(), $template = null, $layout = 'layout')
     {
         $defaults = array(
