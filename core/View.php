@@ -20,11 +20,19 @@ class View
     }
 
 
-    public function render($_path, $variables = array(), $_layout = false)
+    /**
+     * ビューファイルのレンダリング
+     *
+     * @param string $_path
+     * @param array $_variables
+     * @param mixed $_layout
+     * @return string
+     */
+    public function render($_path, $_variables = array(), $_layout = false)
     {
         $_file = $this->base_dir . '/' . $_path . '.php';
 
-        extract(array_merge($this->defaults, $variables));
+        extract(array_merge($this->defaults, $_variables));
 
         ob_start();
         ob_implicit_flush(0);
