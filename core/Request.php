@@ -75,12 +75,18 @@ class Request
     }
 
 
+    /**
+     * PATH_INFOを取得
+     *
+     * @return string
+     */
     public function getPathInfo()
     {
-        $base_url = $this->getBaseUrl();
+        $base_url    = $this->getBaseUrl();
         $request_uri = $this->getRequestUri();
 
-        if (false !== ($pos = strpos($request_uri, '?'))) {
+        // strpos: 文字列の中に ? が見つからなければfalseが返ってくる
+        if ( ($pos = strpos($request_uri, '?')) === True ) {
             $request_uri = substr($request_uri, 0, $pos);
         }
 

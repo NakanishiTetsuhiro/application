@@ -53,7 +53,7 @@ class Session
     }
 
 
-    public function setAuthenticated($book)
+    public function setAuthenticated($bool)
     {
         $this->set('_authenticated', (bool)$bool);
 

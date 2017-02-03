@@ -29,7 +29,7 @@ abstract class Application
         }
     }
 
-
+    // __constructで呼び出し
     protected function initialize()
     {
         $this->request    = new Request();
@@ -39,7 +39,7 @@ abstract class Application
         $this->router     = new Router($this->registerRoutes());
     }
 
-
+    // __constructで呼び出し
     protected function configure()
     {
     }
@@ -102,10 +102,11 @@ abstract class Application
         return $this->getRootDir() . '/web';
     }
 
-
+    // アプリケーション実行時にまずはじめに呼ばれる関数
     public function run()
     {
         try {
+            //routerはinitialize()で呼び出されてる
             $params = $this->router->resolve($this->request->getPathInfo());
             if ($params === false) {
                 throw new HttpNotFoundException('No route found for ' . $this->request->getPathInfo());

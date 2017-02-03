@@ -41,6 +41,12 @@ class Router
     }
 
 
+    /**
+     * 指定されたPATH_INFOを元にルーティングパラメータを特定する
+     *
+     * @param string $path_info
+     * @return array|false
+     */
     public function resolve($path_info)
     {
         if ('/' !== substr($path_info, 0, 1)) {
@@ -48,6 +54,8 @@ class Router
         }
         
         foreach ($this->routes as $pattern => $params) {
+
+            // preg_matchで使われている#はデリミタ。正規表現はこれで囲まなければいけない決まりらしい
             if (preg_match('#^' . $pattern . '$#', $path_info, $matches)) {
                 $params = array_merge($params, $matches);
 
